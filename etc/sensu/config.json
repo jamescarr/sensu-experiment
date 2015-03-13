@@ -1,0 +1,31 @@
+{
+  "rabbitmq": {
+    "host": "rabbitmq",
+    "port": 5671,
+    "vhost": "/",
+    "user": "guest",
+    "password": "guest",
+    "ssl": {
+      "cert_chain_file": "/etc/sensu/ssl/cert.pem",
+      "private_key_file": "/etc/sensu/ssl/key.pem"
+    }
+  },
+  "redis": {
+    "host": "redis",
+    "port": 6379
+  },
+  "api": {
+    "host": "localhost",
+    "bind": "0.0.0.0",
+    "port": 4567,
+    "user": "admin",
+    "password": "secret"
+  },
+  "client": {
+    "name": "sensu",
+    "address": "127.0.0.1",
+    "subscriptions": [
+      "test"
+    ]
+  }
+}

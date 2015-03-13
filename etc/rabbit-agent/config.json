@@ -1,0 +1,20 @@
+{
+  "rabbitmq": {
+    "host": "rabbitmq",
+    "port": 5671,
+    "vhost": "/",
+    "user": "guest",
+    "password": "guest",
+    "ssl": {
+      "cert_chain_file": "/etc/sensu/ssl/cert.pem",
+      "private_key_file": "/etc/sensu/ssl/key.pem"
+    }
+  },
+  "client": {
+    "name": "rabbit",
+    "address": "rabbitmqagent",
+    "subscriptions": [
+      "rabbit"
+    ]
+  }
+}

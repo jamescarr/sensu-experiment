@@ -1,0 +1,38 @@
+sensu:
+  build: ./sensu
+  volumes: 
+    - "./etc/sensu:/etc/sensu"
+  environment:
+    RABBITMQ_HOST: rabbitmq
+    REDIS_HOST: redis
+  ports:
+    - "3000:3000"
+    - "4567:4567"
+
+  links:
+    - rabbitmq
+    - redis
+
+rabbitmqagent:
+  build: ./rabbit-agent
+  volumes: 
+    - "./etc/rabbit-agent:/etc/sensu"
+  links:
+    - rabbitmq
+
+rabbitmq:
+  hostname: rabbitmq
+  image: rabbitmq:3.4.4-management
+  volumes:
+    - "./etc/rabbitmq:/etc/rabbitmq"
+    - "./local/rabbit:/data"
+  ports:
+    - "5672:5672"
+    - "5671:5671"
+    - "15672:15672"
+    - "15671:15671"
+
+redis:
+  image: redis:2.8.19
+  ports:
+    - "6379:6379"
