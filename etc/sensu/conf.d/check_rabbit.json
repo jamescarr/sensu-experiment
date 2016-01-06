@@ -2,7 +2,7 @@
   "checks": {
     "queue_depth": {
       "handlers": [],
-      "command": "/etc/sensu/plugins/check-rabbitmq-messages.rb --host rabbitmq --port 15672 --user guest --password guest -w 100 -c 60000",
+      "command": "/etc/sensu/plugins/check-rabbitmq-messages.rb --host rabbitmq --port 15672 --user guest --password guest -w 100 -c 59999",
       "interval": 5,
       "subscribers": [ "rabbit" ]
     }
