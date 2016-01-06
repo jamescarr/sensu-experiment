@@ -3,7 +3,7 @@ from haigha.message import Message
 
 connection = Connection(
   user='guest', password='guest',
-  vhost='/', host='192.168.59.103',
+  vhost='/', host='127.0.0.1',
   heartbeat=None, debug=True)
 
 ch = connection.channel()
